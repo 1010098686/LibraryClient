@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center_vertical"
+    android:background="@mipmap/backgroud"
     tools:context="com.frederic.project.libraryclient.AdminActivity">
 
     <Button

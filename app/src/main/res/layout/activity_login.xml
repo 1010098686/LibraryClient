@@ -3,6 +3,7 @@
     android:layout_height="wrap_content"
     android:layout_width="match_parent"
     android:orientation="vertical"
+    android:background="@mipmap/backgroud"
     >
     <LinearLayout
         android:layout_width="match_parent"
