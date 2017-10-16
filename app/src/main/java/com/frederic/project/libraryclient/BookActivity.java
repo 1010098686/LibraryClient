@@ -84,19 +84,20 @@ public class BookActivity extends AppCompatActivity implements View.OnClickListe
 
         publishTimeBtn.setOnClickListener(this);
         okBtn.setOnClickListener(this);
+
+        Calendar c = Calendar.getInstance();
+        if(mode == MODIFY_MODE){
+            c.setTimeInMillis(book.getPublishTime());
+        }else if(mode == ADD_MODE){
+            c.setTimeInMillis(System.currentTimeMillis());
+        }
+        dialog = new DatePickerDialog(this,null,c.get(Calendar.YEAR),c.get(Calendar.MONTH),c.get(Calendar.DAY_OF_MONTH));
     }
 
     @Override
     public void onClick(View view) {
         int id = view.getId();
         if(id == R.id.book_publish_time){
-            Calendar c = Calendar.getInstance();
-            if(mode == MODIFY_MODE){
-                c.setTimeInMillis(book.getPublishTime());
-            }else if(mode == ADD_MODE){
-                c.setTimeInMillis(System.currentTimeMillis());
-            }
-            dialog = new DatePickerDialog(this,null,c.get(Calendar.YEAR),c.get(Calendar.MONTH),c.get(Calendar.DAY_OF_MONTH));
             dialog.show();
         }else if(id == R.id.okBtn){
             Book book = new Book();
